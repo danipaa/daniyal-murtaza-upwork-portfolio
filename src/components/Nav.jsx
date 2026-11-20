@@ -37,10 +37,17 @@ export default function Nav() {
       animate={ready ? { y: 0, opacity: 1 } : undefined}
       transition={{ duration: 1, ease: EASE, delay: 0.1 }}
     >
+      <div className="nav-left">
       <button type="button" className="nav-id" onClick={() => scrollToId("top")} aria-label="Back to top">
-        <span className="nav-mono">DM</span>
+        <img className="nav-mono" src="/favicon.svg" alt="" width="46" height="46" />
         <span className="nav-name">{PROFILE.name}</span>
       </button>
+      <span className="nav-tag" title="This portfolio is shared for Upwork clients">
+        <i aria-hidden="true" />
+        <span className="nav-tag-long">Upwork Portfolio</span>
+        <span className="nav-tag-short">Upwork</span>
+      </span>
+      </div>
 
       <nav className="nav-links" onMouseLeave={() => setHover(null)}>
         {LINKS.map(([id, label]) => (
